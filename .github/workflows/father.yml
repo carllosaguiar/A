@@ -27,14 +27,10 @@ jobs:
     # Update references
     - name: Git Sumbodule Update
       run: |
+        git config --file=.gitmodules submodule.Submod.branch {{ github.ref_name }}
         git submodule sync
         git pull --recurse-submodules
         git submodule update --remote --recursive
-
-#    - name: Git track branch
-#      if: 
-#      run: |
-#        git config --file=.gitmodules submodule.Submod.branch {{ github.ref_name }}
 
     - name: Commit update
       run: |
