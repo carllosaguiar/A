@@ -26,8 +26,6 @@ jobs:
 
     # Update references
     - name: Git Sumbodule Update
-      script:
-        cd /B
       run: |
         git fetch origin
         git switch --detach origin/${{ github.ref_name }}
