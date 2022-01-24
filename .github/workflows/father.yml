@@ -26,8 +26,9 @@ jobs:
 
     # Update references
     - name: Git Sumbodule Update
+      script:
+        cd /B
       run: |
-        cd /B 
         git fetch origin
         git switch --detach origin/${{ github.ref_name }}
         git pull --recurse-submodules
