@@ -32,7 +32,8 @@ jobs:
         git switch --detach origin/${{ github.ref_name }}
 #        git pull --recurse-submodules
 #        git submodule update --remote --recursive
-
+      working-directory: ../
+        git add B
     - name: Commit update
       run: |
         git config --global user.name 'Git bot'
