@@ -26,7 +26,7 @@ jobs:
 
     # Update references
     - name: Git Sumbodule Update
-      working-directory: /B
+      working-directory: ./B
       run: |
         git fetch origin 
         git switch --detach origin/${{ github.ref_name }}}
