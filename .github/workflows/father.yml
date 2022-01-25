@@ -29,7 +29,7 @@ jobs:
       working-directory: ./B
       run: |
         git fetch origin 
-        git switch -c ${{ github.ref_name }} --track origin/${{ github.ref_name }}
+        git switch --detach v2.0
         git pull --recurse-submodules
         git submodule update --remote --recursive
 
