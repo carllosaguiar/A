@@ -26,9 +26,12 @@ jobs:
 
     # Update references
     - name: Git Sumbodule Update
+      working-directory: /B
       run: |
-        git pull --recurse-submodules
-        git submodule update --remote --recursive
+        git fetch origin 
+        git switch --detach origin/${{ github.ref_name }}}
+#        git pull --recurse-submodules
+#        git submodule update --remote --recursive
 
     - name: Commit update
       run: |
